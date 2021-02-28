@@ -1,6 +1,6 @@
 # hax
 
-[Original repo](https://github.com/fehawen/hax).
+Thanks! [Original repo](https://github.com/fehawen/hax).
 
 1366x768
 
