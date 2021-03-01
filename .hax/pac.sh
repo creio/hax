@@ -7,7 +7,7 @@ command -v pacman >/dev/null || {
     exit 1
 }
 
-last_update=$(grep Running\ \'pacman\ -Syu /var/log/pacman.log | tail -1 | awk '{print $1, $2}' | sed 's/[][]//g' | cut -dT -f1)
+last_update=$(awk '/full system upgrade/ { save=$0 }END{ print save }' /var/log/pacman.log | sed 's/[][]//g' | cut -dT -f1)
 
 update_timestamp=$(date -d "${last_update}" +%s)
 current_timestap=$(date +%s)

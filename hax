@@ -471,10 +471,10 @@ for_window [class="(?i)nitrogen|engrampa|file-roller|fsearch|qt5ct"] floating en
 for_window [class="(?i)atril|pavucontrol|lxappearance|viewnior|keepassxc|veracrypt"] floating enable
 for_window [title="(?i)m_sticky"] floating enable, resize set 350 250, sticky enable, move window to position 1000 85
 
-for_window [title="(?i)htop"] floating enable, resize set 1280 600, move position center, focus
-for_window [class="(?i)firefox|xfce4-terminal|thunar|subl3|mousepad"] focus
-for_window [window_role="demo"] move window to scratchpad, scratchpad show, floating enable, border pixel 0, resize set 1366 250, move absolute position 0 518
-for_window [class="(?i)demo"] move window to scratchpad, scratchpad show, floating enable, border pixel 0, resize set 1366 350, move absolute position 0 418
+# for_window [title="(?i)htop"] floating enable, resize set 1280 600, move position center, focus
+# for_window [class="(?i)firefox|xfce4-terminal|thunar|subl3|mousepad"] focus
+# for_window [window_role="demo"] move window to scratchpad, scratchpad show, floating enable, border pixel 0, resize set 1366 250, move absolute position 0 518
+# for_window [class="(?i)demo"] move window to scratchpad, scratchpad show, floating enable, border pixel 0, resize set 1366 350, move absolute position 0 418
 
 ############
 #### i3 ####
@@ -539,6 +539,8 @@ bindsym \$mod+Control+i exec --no-startup-id inkscape
 #### UTILS ####
 ###############
 
+bindsym \$mod+\$mod1+Delete exec \$HOME/.bin/power
+
 # Take screenshot
 bindsym Print exec --no-startup-id "\$HOME/.bin/flameshot.sh -c"
 bindsym \$mod+Print exec --no-startup-id "flameshot gui"
@@ -548,6 +550,7 @@ bindsym Control+Print exec --no-startup-id "\$HOME/.bin/flameshot.sh -d 3000"
 # bindsym \$mod+d exec dmenu_run -i -p "Launch: " -nb "$color0" -nf "$color7" -sb "$color0" -sf "$color8" -fn "$(printf '%s' "$tpfc" | tr '[:upper:]' '[:lower:]' | tr -d '[:space:]')-$tpsz"
 
 bindsym \$mod+d exec rofi -show drun
+bindsym \$mod+\$mod1+g exec \$HOME/.bin/rofi-totp
 
 bindsym Control+\$mod1+h exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -width 500 -lines 18 -font "$tpfc $tpsz"
 
